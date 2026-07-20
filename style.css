@@ -1,0 +1,19 @@
+body{
+background-color: black;
+color:white;
+padding:20px;
+}
+
+button{
+color:white;
+background-color: red;
+padding:10px;
+border-radius: 20px;
+width:200px;
+}
+
+input{
+margin:8px;
+padding:10px;
+border-radius:10px;
+}
