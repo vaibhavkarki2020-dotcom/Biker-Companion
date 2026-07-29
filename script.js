@@ -68,6 +68,7 @@ for(let i=0;i<trips.length;i++){
  <hr>
 </div>
 `;}
+updateStatistics();
 }
 
 
@@ -76,6 +77,7 @@ function deleteTrip(index){
   trips.splice(index,1);
   localStorage.setItem("trips",JSON.stringify(trips));
   displayTrips();
+  updateStatistics();
 
 }
 
@@ -144,7 +146,32 @@ function goToNextInput(event,nextInputId){
     }
 }
 
+function updateStatistics(){
+  let totalTrips=trips.length;
+  let totalDistance=0;
+  let totalExpense=0;
 
+  for(let i=0;i<trips.length;i++){
+    let trip=trips[i];
+
+    totalDistance+=trip.distance;
+    totalExpense+=trip.expense;
+   
+
+
+}
+let averageCost=0;
+if(totalDistance>0){
+ averageCost=totalExpense/totalDistance;
+}averageCost=averageCost.toFixed(2);
+
+document.getElementById("totalTrips").innerText="Total Trips:"+totalTrips;
+document.getElementById("totalDistance").innerText="Total Distance:"+totalDistance+"km";
+document.getElementById("totalExpenseStats").innerText="Total Expense:₹"+totalExpense;
+document.getElementById("averageCostKm").innerText="Average Cost/Km:₹"+averageCost;
+  
+
+}
 
 
 
