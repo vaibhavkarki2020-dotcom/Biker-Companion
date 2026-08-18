@@ -1,19 +1,361 @@
+* {
+    box-sizing:border-box;
+}
+
+h1 {
+    margin-bottom:5px;
+    font-size:32px;
+    }
+
+h1 span{
+    color:#ff0000;
+}
+
+    
+.container{
+        max-width:1000px;
+        margin:auto;
+    
+    }   
+.container p{
+        margin-top:0px;
+     margin-bottom:20px;
+     color:#999;
+     font-size:14px;
+    }
+
 body{
 background-color: black;
 color:white;
-padding:20px;
+padding:30px 20px;
+
 }
+
+
+
+.form-card{
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 15px;
+    border:1px solid #2d2d2d;
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+}
+
+.form-card h2{
+    margin-top:0;
+    margin-bottom:20px;
+    font-size:20px;
+    color:#eee;
+}
+
+.form-card input{
+    flex: 1;
+    width:100%;
+    margin:0;
+}
+
+.form-card > div{
+margin-bottom :15px;
+display: flex;
+align-items: center;
+gap:15px;
+
+}
+
+.form-card label{
+    width:110px;
+    color:#ccc;
+    font-size:14px;
+}
+
+.button-group{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:18px;
+}
+
+.button-group button{
+    flex:1;
+    min-width:150px;
+    width:auto;
+    padding:14px;
+    border-radius:9px;
+    font-size:14px;
+    transition:0.2s;
+   }
 
 button{
 color:white;
-background-color: red;
-padding:10px;
-border-radius: 20px;
-width:200px;
+background-color: #8b0000;
+padding:15px;
+border:none;
+border-radius: 10px;
+cursor:pointer;
+font-size:15px;
+}
+
+#calculateTrip{
+    background-color:#8b0000;
+    font-weight:bold;
+}
+#calculateTrip:hover{
+    background-color:#a00000;
+}
+#resetExpense{
+    background-color:#333;
+}
+#resetExpense:hover{
+    background-color:#444;
+}
+#saveTrip{
+    background-color:#8b0000;
+}
+#saveTrip:hover{
+    background-color:#a00000;
+}
+
+button:hover{
+    background-color:#a00000;
+}
+
+#cancelEdit{
+    background-color:#333;
+}
+#cancelEdit:hover{
+    background-color:#444;
 }
 
 input{
 margin:8px;
 padding:10px;
-border-radius:10px;
+border-radius:8px;
+border:1px solid #444;
+background-color:#111;
+color:white;
+outline:none;
+transition:0.25s;
 }
+input:focus{
+    border-color:#8b0000;
+    box-shadow: 0 0 0 2px rgba(139,0,0,0.2);
+}
+input::placeholder{
+    color:#777;
+}
+
+
+.dashboard-grid{
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    gap:20px;
+}
+.stats-card{
+    background-color:#1a1a1a;
+    padding:20px;
+    border-radius:15px;
+    border:1px solid #2d2d2d;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+
+}
+
+.stats-card h2{
+    margin-top:0;
+    margin-bottom:20px;
+    font-size:20px;
+    color:#eee;
+}
+
+.stats-card p{
+    margin:10px 0;
+    padding:11px;
+    background-color:#252525;
+    border-radius:8px;
+    border-left:3px solid #8b0000;
+    color:#ddd;
+}
+.results-card{
+    display:flex;
+    gap:15px;
+    margin-top:15px;
+}
+
+
+#totalTrips,
+#totalDistance,
+#totalExpenseStats,
+#averageCostKm
+{
+    font-weight:bold;
+    margin:8px 0;
+}
+
+#totalExpense,
+#costPerKm{
+    display:none;
+    flex:1;
+    background-color:#252525;
+    font-weight:normal;
+    margin:0;
+    padding:9px;
+    border-radius:8px;
+    border-left:3px solid #8b0000;
+    color:#eee;
+}
+
+.trip-card .edit-btn{
+    background-color:#8b0000;
+    
+}
+.trip-card .edit-btn:hover{
+    background-color:#a00000;
+}
+
+.trip-card .delete-btn{
+    background-color:#333;
+}
+.trip-card .delete-btn:hover{
+    background-color:#444;
+}
+
+.trips-card{
+    background-color:#1a1a1a;
+    padding:20px;
+    border-radius:15px;
+    margin-top:20px;
+    border:1px solid #2d2d2d;
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+}
+.trips-card h2{
+    margin-top:0;
+    margin-bottom:20px;
+    font-size:20px;
+    color:#eee;
+}
+
+.trip-card{
+    background-color:#252525;
+    padding:18px;
+    border-radius:12px;
+    margin-top:12px;
+    border-left : 3px solid #8b0000;
+    transition:0.2s;
+}
+
+
+.trip-card:hover{
+    border-left-color:#a00000;
+   }
+
+.trip-card p{
+    margin:6px 0;
+    line-height:1.5;
+    color:#ccc;
+}
+.trip-card strong{
+    color:white;
+}
+
+.trip-card button{
+    width:auto;
+    padding:9px;
+    margin-top:10px;
+    border-radius:8px;
+    font-size:14px;
+}
+
+.trip-card hr{
+    border:none;
+    border-top:1px solid #444;
+    margin-top:15px;
+}
+
+.trip-total{
+    font-weight:bold;
+    color:white !important;
+    border-top:1px solid #444;
+    padding-top:10px;
+    margin-top:10px !important;
+}
+
+
+.hero-header{
+    position:relative;
+    min-height:140px;
+    padding:26px;
+    margin-bottom:20px;
+    border-radius:15px;
+    overflow:hidden;
+
+    background-image:url(images/bike.png);
+background-size: cover;
+background-position:center 63% ;
+background-repeat:no-repeat;
+}
+.hero-header::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.35);
+    }
+.hero-text{
+    position:relative;
+    z-index:2;
+    width:45%;
+    }
+   .hero-text p{
+    margin-bottom:0;
+}
+
+
+
+
+@media(max-width:600px){
+    
+    .button-group button{
+        flex:1 1 calc(50% - 5px);
+        min-width:0;
+       
+    }
+    .dashboard-grid{
+        grid-template-columns:1fr;
+    }
+    .results-card{
+        flex-direction:column;
+    }
+
+    .form-card > div{
+        flex-direction:column;
+        align-items:stretch;
+        gap:5px; }
+
+    .form-card label{
+        width:auto;
+    }
+    .form-card input{
+        width:100%;
+    }
+    .form-card,
+    .stats-card,
+    .trip-card{
+        padding:16px;
+    }
+
+    .hero-header{
+        min-height:130px;
+        padding:20px;
+        background-position:center 63%;
+    }
+    h1{
+        font-size:28px;
+    }
+
+
+    }
+
+
+
+
+
+
+

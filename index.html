@@ -5,52 +5,75 @@
 
 </head>
 <body>
-<h1> Biker Companion </h1>
+    <div class="container">
+
+        <div class="hero-header">
+            <div class="hero-text">
+<h1> Biker <span>Companion</span> </h1>
+   
 <p> Track Your Rides And Expenses </p>
+</div>
+
+</div>
+<div class="dashboard-grid">
+   
+<div class="form-card">
+    <h2>🏍️ Trip Details</h2> 
 <div>
-<label> Rider Name </label>
+<label for="rider"> Rider Name </label>
 <input type="text" id="rider"  placeholder="Your Name"> 
 </div>
 <div>
-<label>Bike Name </label>
+<label for="bike">Bike Name </label>
 <input type="text" id="bike" placeholder="Bike">
 </div>
-<div>
 <div>
 <label for="distance">Distance(km)</label> 
 <input type="number" id="distance" placeholder="Distance">
 </div>
-<label>Fuel Expense</label>
+<div>
+<label for="fuel">Fuel Expense</label>
 <input type="number" id="fuel" placeholder="fuel ">
 </div>
 <div>
-<label>Food Expense</label>
+<label for="food">Food Expense</label>
 <input type="number" id="food" placeholder="Food">
 </div>
 <div>
-<label>Other Expense</label>
+<label for="other">Other Expense</label>
  <input type="number" id="other" placeholder="enter here">
 </div>
+</div>
+<div class="stats-card">
+    <h2>📊 Ride Statistics</h2>
+    <p id="totalTrips"> </p>
+    <p id="totalDistance"></p>
+    <p id="totalExpenseStats"></p>
+    <p id="averageCostKm"></p>
+    </div>
+</div>    
+
+<div class="button-group">
 <button id="calculateTrip"> Calculate Trip </button>
-<p id="totalExpense"> </p>
-<p id="costPerKm"></p>
 <button id="resetExpense"> Reset</button>
-
 <button id="saveTrip"> Save Trip </button>
+<button id="cancelEdit"style="display:none;">Cancel Edit</button>
+</div>
+<div class="results-card">
+<p id="totalExpense"></p>
+<p id="costPerKm"></p>
+</div>
 
-<h2>📊 Ride Statistics</h2>
-<p id="totalTrips"> </p>
-<p id="totalDistance"></p>
-<p id="totalExpenseStats"></p>
-<p id="averageCostKm"></p>
 
-<h2>Latest Trips</h2>
+<div class="trips-card">
+<h2>🏁 Latest Trips</h2>
 <div
     id="tripHistory">
 </div>
+</div>
 
 
-
+</div>
 
 <script src ="script.js" ></script>
 
