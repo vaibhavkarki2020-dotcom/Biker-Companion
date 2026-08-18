@@ -46,6 +46,7 @@ Biker-Companion/
 - Emergency SOS
 - Offline route saving
 - Ride history improvements
+- Group ride tracker
 
 ## Author
 
